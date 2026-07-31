@@ -1,10 +1,17 @@
-"""LLM client wrapper supporting Anthropic and OpenAI."""
+"""LLM client wrapper supporting Anthropic, OpenAI, and OpenAI-compatible
+free providers (e.g. Groq)."""
 import json
 import re
 
 DEFAULT_MODELS = {
     "anthropic": "claude-sonnet-4-20250514",
     "openai": "gpt-4o-mini",
+    "groq": "meta-llama/llama-4-scout-17b-16e-instruct",
+}
+
+# OpenAI-compatible providers: same SDK/wire format, different base_url.
+OPENAI_COMPATIBLE_BASE_URLS = {
+    "groq": "https://api.groq.com/openai/v1",
 }
 
 
@@ -22,6 +29,9 @@ class LLMClient:
         elif provider == "openai":
             import openai
             self._client = openai.OpenAI(api_key=api_key)
+        elif provider in OPENAI_COMPATIBLE_BASE_URLS:
+            import openai
+            self._client = openai.OpenAI(api_key=api_key, base_url=OPENAI_COMPATIBLE_BASE_URLS[provider])
         else:
             raise ValueError(f"Unknown provider: {provider}")
 
@@ -36,7 +46,7 @@ class LLMClient:
 
         if self.provider == "anthropic":
             return self._chat_anthropic(system_prompt, history)
-        elif self.provider == "openai":
+        else:
             return self._chat_openai(system_prompt, history)
 
     def _chat_anthropic(self, system_prompt, history):

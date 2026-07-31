@@ -77,14 +77,21 @@ def save_index(index):
         json.dump(index, f, indent=2)
 
 
+ENV_VAR_NAMES = {
+    "anthropic": "ANTHROPIC_API_KEY",
+    "openai": "OPENAI_API_KEY",
+    "groq": "GROQ_API_KEY",
+}
+
+
 def write_env_file(provider, api_key):
-    var_name = "ANTHROPIC_API_KEY" if provider == "anthropic" else "OPENAI_API_KEY"
+    var_name = ENV_VAR_NAMES.get(provider, "OPENAI_API_KEY")
     with open(ENV_PATH, "w") as f:
         f.write(f"{var_name}={api_key}\n")
 
 
 def get_api_key(provider):
-    var_name = "ANTHROPIC_API_KEY" if provider == "anthropic" else "OPENAI_API_KEY"
+    var_name = ENV_VAR_NAMES.get(provider, "OPENAI_API_KEY")
     return os.environ.get(var_name)
 
 
@@ -167,9 +174,10 @@ def build_full_config(config, provider):
 
 
 def cmd_setup(args):
-    provider = input("LLM provider (anthropic/openai): ").strip().lower()
-    while provider not in ("anthropic", "openai"):
-        provider = input("Please enter 'anthropic' or 'openai': ").strip().lower()
+    valid_providers = tuple(ENV_VAR_NAMES.keys())
+    provider = input(f"LLM provider ({'/'.join(valid_providers)}): ").strip().lower()
+    while provider not in valid_providers:
+        provider = input(f"Please enter one of: {', '.join(valid_providers)}: ").strip().lower()
 
     api_key = input(f"Enter your {provider} API key: ").strip()
     write_env_file(provider, api_key)
