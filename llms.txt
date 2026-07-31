@@ -1,0 +1,23 @@
+# Markbase
+
+> A self-organizing markdown wiki CLI: drop `.md` notes into `source/`, an LLM categorizes, tags, summarizes, and cross-links them, then a static searchable site is built from the result.
+
+Markbase is a single Python CLI (`wiki.py`) with five subcommands: `setup`, `ingest`, `build`, `serve`, `status`. It works with Anthropic, OpenAI, or any OpenAI-compatible API — Groq is wired in out of the box because it has a genuinely free tier. The build output is a plain static site (HTML/CSS/JS) with client-side search via Lunr.js — no database, no backend framework, deployable anywhere.
+
+## Documentation
+
+- [README](https://github.com/meghanadhdokku-spec/LLM-Wiki-Knowledge-Base/blob/main/README.md): Full setup instructions, CLI reference, configuration schema, frontmatter schema, and an architecture diagram
+- [SECURITY](https://github.com/meghanadhdokku-spec/LLM-Wiki-Knowledge-Base/blob/main/SECURITY.md): Vulnerability reporting policy
+- [LICENSE](https://github.com/meghanadhdokku-spec/LLM-Wiki-Knowledge-Base/blob/main/LICENSE): MIT
+
+## Source
+
+- [wiki.py](https://github.com/meghanadhdokku-spec/LLM-Wiki-Knowledge-Base/blob/main/wiki.py): CLI entrypoint — setup, ingest, build, serve, status subcommands
+- [llm.py](https://github.com/meghanadhdokku-spec/LLM-Wiki-Knowledge-Base/blob/main/llm.py): LLM client wrapper (Anthropic / OpenAI / OpenAI-compatible providers, e.g. Groq)
+- [builder.py](https://github.com/meghanadhdokku-spec/LLM-Wiki-Knowledge-Base/blob/main/builder.py): Static site generator — Jinja2 templates, markdown rendering, Lunr.js search index
+- [requirements.txt](https://github.com/meghanadhdokku-spec/LLM-Wiki-Knowledge-Base/blob/main/requirements.txt): Python dependencies
+
+## Optional
+
+- [dependabot.yml](https://github.com/meghanadhdokku-spec/LLM-Wiki-Knowledge-Base/blob/main/.github/dependabot.yml): Automated weekly dependency update PRs
+- [codeql.yml](https://github.com/meghanadhdokku-spec/LLM-Wiki-Knowledge-Base/blob/main/.github/workflows/codeql.yml): CodeQL security scanning workflow
