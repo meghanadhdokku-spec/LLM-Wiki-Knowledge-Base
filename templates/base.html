@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}{{ site.name }}{% endblock %}</title>
+<link rel="stylesheet" href="{{ '../' if current_category else '' }}static/style.css">
+</head>
+<body>
+<button class="hamburger" id="hamburger" aria-label="Toggle menu">&#9776;</button>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="{{ '../' if current_category else '' }}index.html" class="site-name">{{ site.name }}</a>
+    </div>
+    <button class="search-trigger" id="search-trigger">🔍 Search</button>
+    <nav class="category-nav">
+      <p class="nav-label">Categories</p>
+      <ul>
+        {% for cat in categories %}
+        <li>
+          <a href="{{ '../' if current_category else '' }}{{ cat.slug }}/index.html"
+             class="{{ 'active' if current_category == cat.slug else '' }}">
+            {{ cat.name }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="content">
+    {% block content %}{% endblock %}
+    <footer class="footer">Built with Markbase</footer>
+  </main>
+</div>
+
+<div class="search-overlay" id="search-overlay">
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="Search the wiki..." autocomplete="off">
+    <ul id="search-results"></ul>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script>window.MARKBASE_PREFIX = "{{ '../' if current_category else '' }}";</script>
+<script src="{{ '../' if current_category else '' }}static/search.js"></script>
+</body>
+</html>

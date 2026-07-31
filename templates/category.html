@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ category.name }} — {{ site.name }}{% endblock %}
+{% block content %}
+<nav class="breadcrumb">
+  <a href="../index.html">Home</a> &raquo;
+  <span>{{ category.name }}</span>
+</nav>
+
+<h1>{{ category.name }}</h1>
+<p class="subtitle">{{ category.description }}</p>
+
+{% if documents %}
+<ul class="doc-list">
+  {% for doc in documents %}
+  <li class="doc-item">
+    <a href="{{ doc.slug }}.html">{{ doc.title }}</a>
+    <p class="summary">{{ doc.summary }}</p>
+    <div class="tags">
+      {% for tag in doc.tags %}<span class="pill">{{ tag }}</span>{% endfor %}
+    </div>
+    <span class="date">{{ doc.modified }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No documents in this category yet.</p>
+{% endif %}
+{% endblock %}

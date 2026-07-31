@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}{{ site.name }}{% endblock %}
+{% block content %}
+<h1>{{ site.name }}</h1>
+<p class="subtitle">{{ site.description }}</p>
+
+<section>
+  <h2>Recent Documents</h2>
+  {% if recent %}
+  <ul class="doc-list">
+    {% for doc in recent %}
+    <li class="doc-item">
+      <a href="{{ doc.category }}/{{ doc.slug }}.html">{{ doc.title }}</a>
+      <span class="badge">{{ doc.category }}</span>
+      <p class="summary">{{ doc.summary }}</p>
+      <span class="date">{{ doc.modified }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No documents yet. Run <code>python wiki.py ingest</code> to add some.</p>
+  {% endif %}
+</section>
+
+<section>
+  <h2>Categories</h2>
+  <div class="category-cards">
+    {% for cat in categories %}
+    <a class="category-card" href="{{ cat.slug }}/index.html">
+      <h3>{{ cat.name }}</h3>
+      <p>{{ cat.description }}</p>
+      <span class="count">{{ cat_counts.get(cat.slug, 0) }} doc(s)</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

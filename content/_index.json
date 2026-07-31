@@ -1,0 +1,103 @@
+{
+  "last_updated": "2026-07-31T17:42:05Z",
+  "document_count": 7,
+  "documents": [
+    {
+      "slug": "ci-cd-pipeline-design",
+      "title": "CI/CD Pipeline Design",
+      "category": "devops",
+      "tags": [
+        "docker",
+        "tutorial"
+      ],
+      "summary": "A good CI/CD pipeline runs fast, fails loudly, and deploys safely",
+      "path": "content/devops/ci-cd-pipeline-design.md",
+      "created": "2026-07-31",
+      "modified": "2026-07-31",
+      "related": []
+    },
+    {
+      "slug": "getting-started-with-docker",
+      "title": "Getting Started with Docker",
+      "category": "devops",
+      "tags": [
+        "docker",
+        "tutorial"
+      ],
+      "summary": "Docker lets you package an application with its dependencies into a container",
+      "path": "content/devops/getting-started-with-docker.md",
+      "created": "2026-07-31",
+      "modified": "2026-07-31",
+      "related": []
+    },
+    {
+      "slug": "javascript-async-await",
+      "title": "JavaScript Async/Await",
+      "category": "programming",
+      "tags": [
+        "python",
+        "javascript"
+      ],
+      "summary": "`async`/`await` is syntactic sugar over Promises that makes asynchronous code read like synchronous code",
+      "path": "content/programming/javascript-async-await.md",
+      "created": "2026-07-31",
+      "modified": "2026-07-31",
+      "related": []
+    },
+    {
+      "slug": "postgres-indexing-strategies",
+      "title": "Postgres Indexing Strategies",
+      "category": "databases",
+      "tags": [
+        "reference"
+      ],
+      "summary": "Indexes speed up reads at the cost of slower writes and extra disk space",
+      "path": "content/databases/postgres-indexing-strategies.md",
+      "created": "2026-07-31",
+      "modified": "2026-07-31",
+      "related": []
+    },
+    {
+      "slug": "python-list-comprehensions",
+      "title": "Python List Comprehensions",
+      "category": "programming",
+      "tags": [
+        "python",
+        "javascript"
+      ],
+      "summary": "List comprehensions are a concise way to build lists in Python",
+      "path": "content/programming/python-list-comprehensions.md",
+      "created": "2026-07-31",
+      "modified": "2026-07-31",
+      "related": []
+    },
+    {
+      "slug": "git-basics",
+      "title": "Git Basics",
+      "category": "programming",
+      "tags": [
+        "python",
+        "javascript"
+      ],
+      "summary": "Git is a distributed version control system",
+      "path": "content/programming/git-basics.md",
+      "created": "2026-07-31",
+      "modified": "2026-07-31",
+      "related": []
+    },
+    {
+      "slug": "custom-k8s-slug",
+      "title": "Custom Kubernetes Title",
+      "category": "devops",
+      "tags": [
+        "docker",
+        "tutorial"
+      ],
+      "summary": "Kubernetes orchestrates containers at scale using pods, deployments, and services",
+      "path": "content/devops/custom-k8s-slug.md",
+      "created": "2020-01-01",
+      "modified": "2026-07-31",
+      "related": []
+    }
+  ]
+}
