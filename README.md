@@ -71,8 +71,10 @@ markbase/
 ├── .env.example             # Copy to .env and add your API key
 ├── LICENSE                   # MIT
 ├── SECURITY.md                # Vulnerability reporting policy
-├── .github/workflows/
-│   └── codeql.yml             # Automated CodeQL security scanning
+├── .github/
+│   ├── dependabot.yml          # Weekly pip + GitHub Actions update PRs
+│   └── workflows/
+│       └── codeql.yml          # Automated CodeQL security scanning
 ├── source/                  # Inbox — drop raw .md files here
 ├── content/                  # Organized output — the LLM sorts files here
 │   └── _index.json           # Master document catalog
