@@ -12,6 +12,11 @@ Drop raw `.md` notes into a folder. An LLM reads each one, files it into a categ
 you write notes  →  wiki.py ingest  →  wiki.py build  →  a searchable static site
 ```
 
+<p align="center">
+  <img src="docs/screenshots/home.png" alt="Markbase homepage — sidebar with categories, recent documents list, and category cards" width="49%">
+  <img src="docs/screenshots/doc-page.png" alt="Markbase document page — breadcrumbs, tags, and rendered markdown" width="49%">
+</p>
+
 ## Contents
 
 - [How it works](#how-it-works)
