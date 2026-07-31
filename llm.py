@@ -6,7 +6,7 @@ import re
 DEFAULT_MODELS = {
     "anthropic": "claude-sonnet-4-20250514",
     "openai": "gpt-4o-mini",
-    "groq": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "groq": "llama-3.3-70b-versatile",
 }
 
 # OpenAI-compatible providers: same SDK/wire format, different base_url.

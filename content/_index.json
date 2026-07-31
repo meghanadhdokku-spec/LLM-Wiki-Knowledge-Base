@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-31T17:42:05Z",
-  "document_count": 7,
+  "last_updated": "2026-07-31T17:57:20Z",
+  "document_count": 8,
   "documents": [
     {
       "slug": "ci-cd-pipeline-design",
@@ -98,6 +98,22 @@
       "created": "2020-01-01",
       "modified": "2026-07-31",
       "related": []
+    },
+    {
+      "slug": "redis-caching-patterns",
+      "title": "Redis Caching Patterns",
+      "category": "databases",
+      "tags": [
+        "redis",
+        "caching"
+      ],
+      "summary": "Redis caching techniques",
+      "path": "content/databases/redis-caching-patterns.md",
+      "created": "2026-07-31",
+      "modified": "2026-07-31",
+      "related": [
+        "postgres-indexing-strategies"
+      ]
     }
   ]
 }

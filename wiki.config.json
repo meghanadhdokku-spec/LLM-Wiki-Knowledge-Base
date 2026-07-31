@@ -2,8 +2,8 @@
   "name": "My Knowledge Base",
   "description": "Personal notes on software engineering",
   "llm": {
-    "provider": "anthropic",
-    "model": "claude-sonnet-4-20250514"
+    "provider": "groq",
+    "model": "llama-3.3-70b-versatile"
   },
   "categories": [
     {
@@ -32,7 +32,9 @@
     "javascript",
     "docker",
     "tutorial",
-    "reference"
+    "reference",
+    "caching",
+    "redis"
   ],
   "source_dir": "source",
   "content_dir": "content",
